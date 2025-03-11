@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Football Dashboard</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #e0f7fa, #ffebee);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Dashboard Container */
+        .dashboard-container {
+            background: linear-gradient(135deg, #ffffff, #f1f8ff);
+            color: #333;
+            width: 90%;
+            max-width: 1200px;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border: 1px solid #d0e3f0;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Title Styling */
+        h2 {
+            font-size: 32px;
+            color: #4a90e2;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+
+        /* Image Container */
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* Tutorial Block Styling */
+        .tutorial {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tutorial label {
+            font-size: 18px;
+            font-weight: 600;
+            color: #4a90e2;
+        }
+
+        /* Individual Image Styling */
+        .image {
+            width: 280px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            filter: brightness(95%);
+        }
+
+        .image:hover {
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+            filter: brightness(100%);
+        }
+
+        /* Links Container */
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: 10px;
+        }
+
+        /* Video Link Styling */
+        .video-link {
+            font-size: 16px;
+            color: #ff4081;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .video-link:hover {
+            color: #e91e63;
+            text-decoration: underline;
+        }
+
+        /* Quotes Styling */
+        .quotes-container {
+            margin-bottom: 20px;
+            font-style: italic;
+            color: #555;
+            font-size: 18px;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 10px;
+            background-color: #fafafa;
+            border-left: 4px solid #4a90e2;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .image {
+                width: 100%;
+                height: auto;
+            }
+
+            select {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="dashboard-container">
+    <h2>Welcome to Football Tutorials</h2>
+    
+    <!-- Quotes Section -->
+    <div class="quotes-container">
+        "Football is like life - it requires perseverance, self-denial, hard work, sacrifice, dedication, and respect for authority." – Vince Lombardi
+    </div>
+    
+    <!-- Football Images -->
+    <div class="image-container">
+        <div class="tutorial">
+            <label>Age 4 to 6</label>
+            <img src="./images/football1.jpg.jpg" alt="Football for 4-6" class="image age-4-6" onclick="location.href='category-4-6.html'">
+        </div>
+
+        <div class="tutorial">
+            <label>Age 7 to 10</label>
+            <img src="./images/Football1.jpg" alt="Football for 7-10" class="image age-7-10" onclick="location.href='category-7-10.html'">
+        </div>
+
+        <div class="tutorial">
+            <label>Age 11 to 15</label>
+            <img src="./images/Football4.jpg" alt="Football for 11-15" class="image age-11-15" onclick="location.href='category-11-15.html'">
+        </div>
+    </div>
+</div>
+
+<script>
+    function filterImages() {
+        const selectedCategory = document.getElementById('age-category')?.value;
+        const tutorials = document.querySelectorAll('.tutorial');
+
+        tutorials.forEach(tutorial => {
+            if (selectedCategory === 'all' || tutorial.classList.contains(`age-${selectedCategory.replace('-', '_')}`)) {
+                tutorial.style.display = 'block';
+            } else {
+                tutorial.style.display = 'none';
+            }
+        });
+    }
+
+    // Display all categories on load
+    window.onload = () => filterImages();
+</script>
+
+</body>
+</html>

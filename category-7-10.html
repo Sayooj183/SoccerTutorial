@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Football for Age 7 to 10</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #228B22, #8A9A5B); /* Forest Green to Moss Green */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .box-wrapper {
+            background: linear-gradient(135deg, #5A8A5B, #A9CDA5); /* Softer Forest Green to Moss Green */
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            box-sizing: border-box;
+            margin-top: 20px;
+            width: 90%;
+            max-width: 1200px;
+            height: 85vh;
+            overflow-y: auto;
+            border: 2px solid #228B22;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .box-wrapper:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        /* Quotes Section */
+        .quote {
+            font-size: 18px;
+            font-style: italic;
+            color: #444;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #f0f8f0;
+            border-left: 4px solid #228B22;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .quote:hover {
+            transform: translateY(-3px);
+            background: #eaf7e8;
+        }
+
+        h2 {
+            color: #228B22;
+            font-size: 32px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Video List */
+        .video-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .video-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border: 1px solid #228B22;
+            width: 240px;
+            height: 160px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+            box-sizing: border-box;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+            background-color: #eaf7e8;
+        }
+
+        /* Video Icon */
+        .video-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #228B22;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+        }
+
+        /* Video Title */
+        .video-title {
+            font-size: 16px;
+            font-weight: 500;
+            color: #228B22;
+            margin: 0;
+            text-align: center;
+            transition: color 0.3s ease;
+        }
+
+        .video-card:hover .video-title {
+            color: #145A32;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .box-wrapper {
+                width: 95%;
+                height: auto;
+            }
+
+            .video-card {
+                width: 100%;
+                height: auto;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="box-wrapper">
+    <div class="container">
+        <!-- Quotes Section -->
+        <div class="quote">“Believe you can and you're halfway there.” — Theodore Roosevelt</div>
+        <div class="quote">“Hard work beats talent when talent doesn't work hard.” — Tim Notke</div>
+
+        <!-- Box Section -->
+        <h2>Football Tutorials for Age 7 to 10</h2>
+
+        <ul class="video-list">
+            <!-- Video 1 -->
+            <li>
+                <a href="https://www.youtube.com/watch?v=example1" target="_blank" class="video-card">
+                    <div class="video-icon">🎯</div>
+                    <p class="video-title">Tutorial 1 - Intermediate Dribbling</p>
+                </a>
+            </li>
+
+            <!-- Video 2 -->
+            <li>
+                <a href="https://www.youtube.com/watch?v=example2" target="_blank" class="video-card">
+                    <div class="video-icon">⚽</div>
+                    <p class="video-title">Tutorial 2 - Advanced Passing</p>
+                </a>
+            </li>
+
+            <!-- Video 3 -->
+            <li>
+                <a href="https://www.youtube.com/watch?v=example3" target="_blank" class="video-card">
+                    <div class="video-icon">🥅</div>
+                    <p class="video-title">Tutorial 3 - Perfect Shooting</p>
+                </a>
+            </li>
+
+            <!-- Video 4 -->
+            <li>
+                <a href="https://www.youtube.com/watch?v=example4" target="_blank" class="video-card">
+                    <div class="video-icon">🏆</div>
+                    <p class="video-title">Tutorial 4 - Defensive Techniques</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

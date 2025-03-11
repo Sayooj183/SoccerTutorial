@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    
+    <style>
+        /* General styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: linear-gradient(135deg, #00c9ff, #92fe9d);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Login container */
+        .login-container {
+            background-color: #ffffff;
+            padding: 30px;
+            width: 320px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Form styling */
+        .login-form h2 {
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .input-group input:focus {
+            border-color: #00c9ff;
+        }
+
+        /* Login button */
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #00c9ff;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #009ac8;
+        }
+
+        /* Error message */
+        .error-message {
+            color: red;
+            margin-top: 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* Signup link */
+        .signup-link {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .signup-link a {
+            color: #00c9ff;
+            text-decoration: none;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <form class="login-form" onsubmit="return validateLogin(event)">
+        <h2>Login</h2>
+        <div class="input-group">
+            <input type="text" id="username" placeholder="Username" required />
+        </div>
+        <div class="input-group">
+            <input type="password" id="password" placeholder="Password" required />
+        </div>
+        <button type="submit">Login</button>
+        <p id="error-message" class="error-message"></p>
+       
+    </form>
+</div>
+
+<script>
+    // Define hardcoded users and passwords
+    const users = {
+        'admin': 'admin123',
+        'user1': 'password1',
+        'user2': 'password2'
+    };
+
+    function validateLogin(event) {
+        event.preventDefault(); // Prevent form from refreshing the page
+
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const errorMessage = document.getElementById('error-message');
+
+        // Check if username and password match
+        if (users[username] && users[username] === password) {
+            alert('Login successful!'); // Show success message
+            window.location.href = 'dashboard.html'; // Redirect to another page (optional)
+        } else {
+            errorMessage.textContent = 'Invalid username or password'; // Show error message
+        }
+    }
+</script>
+
+</body>
+</html>
