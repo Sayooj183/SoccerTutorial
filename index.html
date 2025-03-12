@@ -40,6 +40,7 @@
 
         .input-group {
             margin-bottom: 15px;
+            position: relative;
         }
 
         .input-group input {
@@ -50,10 +51,23 @@
             outline: none;
             font-size: 16px;
             transition: border-color 0.3s;
+            padding-right: 40px;
         }
 
         .input-group input:focus {
             border-color: #00c9ff;
+        }
+
+        /* Show/Hide Password Icon */
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 18px;
+            color: #999;
+            user-select: none;
         }
 
         /* Login button */
@@ -108,10 +122,10 @@
         </div>
         <div class="input-group">
             <input type="password" id="password" placeholder="Password" required />
+            <span class="toggle-password" onclick="togglePassword()">👁️</span>
         </div>
         <button type="submit">Login</button>
         <p id="error-message" class="error-message"></p>
-       
     </form>
 </div>
 
@@ -132,10 +146,23 @@
 
         // Check if username and password match
         if (users[username] && users[username] === password) {
-            alert('Login successful!'); // Show success message
             window.location.href = 'dashboard.html'; // Redirect to another page (optional)
         } else {
             errorMessage.textContent = 'Invalid username or password'; // Show error message
+        }
+    }
+
+    // Toggle password visibility
+    function togglePassword() {
+        const passwordInput = document.getElementById('password');
+        const toggleIcon = document.querySelector('.toggle-password');
+        
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            toggleIcon.textContent = '🙈'; // Change icon to closed eye
+        } else {
+            passwordInput.type = 'password';
+            toggleIcon.textContent = '👁️'; // Change icon to open eye
         }
     }
 </script>
