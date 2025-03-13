@@ -130,11 +130,20 @@
 </div>
 
 <script>
+
+  document.addEventListener("contextmenu", function (event) {
+    event.preventDefault();
+  
+  });
+
     // Define hardcoded users and passwords
     const users = {
         'admin': 'admin123',
-        'user1': 'password1',
-        'user2': 'password2'
+        'abhinav': 'abhinav123',
+        'sayooj': 'sayooj132',
+	  'shebin': 'shebin231',
+	  'devapriya' : 'devapriya213',
+	  'archana' : 'archana312'
     };
 
     function validateLogin(event) {
@@ -165,6 +174,7 @@
             toggleIcon.textContent = '👁️'; // Change icon to open eye
         }
     }
+
 </script>
 
 </body>

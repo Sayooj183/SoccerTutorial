@@ -19,6 +19,15 @@
             min-height: 100vh;
         }
 
+        /* Wrapper to stack heading and dashboard vertically */
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+        }
+
         /* Dashboard Container */
         .dashboard-container {
             background: linear-gradient(135deg, #ffffff, #f1f8ff);
@@ -52,6 +61,23 @@
             font-weight: 700;
             letter-spacing: 1px;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+
+        /* Quotes Styling */
+        .quotes-container {
+            margin-bottom: 20px;
+            font-style: italic;
+            color: #555;
+            font-size: 18px;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 10px;
+            background-color: #fafafa;
+            border-left: 4px solid #4a90e2;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
         /* Image Container */
@@ -95,43 +121,60 @@
             filter: brightness(100%);
         }
 
-        /* Links Container */
-        .links-container {
+        /* Heading Container Styling */
+        .heading-container {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 90%;
+            max-width: 1200px;
+            border: 1px solid #d0e3f0;
+            text-align: center;
+            animation: fadeIn 0.5s ease;
+        }
+
+        /* Heading in Heading Container */
+        .heading-container h2 {
+            font-size: 24px;
+            color: #4a90e2;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+
+        /* Image1 Container */
+        .image1-container {
             display: flex;
-            flex-direction: column;
-            gap: 6px;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
             margin-top: 10px;
         }
 
-        /* Video Link Styling */
-        .video-link {
-            font-size: 16px;
-            color: #ff4081;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
+        .tutorial1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
         }
 
-        .video-link:hover {
-            color: #e91e63;
-            text-decoration: underline;
+        .image1 {
+            width: 100px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            filter: brightness(95%);
         }
 
-        /* Quotes Styling */
-        .quotes-container {
-            margin-bottom: 20px;
-            font-style: italic;
-            color: #555;
-            font-size: 18px;
-            text-align: center;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 10px;
-            background-color: #fafafa;
-            border-left: 4px solid #4a90e2;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        .image1:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            filter: brightness(100%);
         }
 
         /* Responsive Design */
@@ -141,58 +184,69 @@
                 height: auto;
             }
 
-            select {
-                width: 100%;
+            .image1 {
+                width: 80px;
+                height: 70px;
             }
         }
     </style>
 </head>
 <body>
 
-<div class="dashboard-container">
-    <h2>Welcome to Drill and Training Planner</h2>
-    
-    <!-- Quotes Section -->
-    <div class="quotes-container">
-        "Football is like life - it requires perseverance, self-denial, hard work, sacrifice, dedication, and respect for authority." – Vince Lombardi
+<div class="wrapper">
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+        <h2>Welcome to Drill and Training Planner</h2>
+        
+        <!-- Quotes Section -->
+        <div class="quotes-container">
+            "Football is like life - it requires perseverance, self-denial, hard work, sacrifice, dedication, and respect for authority." – Vince Lombardi
+        </div>
+        
+        <!-- Football Images -->
+        <div class="image-container">
+            <div class="tutorial">
+                <label>Age 4 to 6</label>
+                <img src="./images/4to6first.jpg" alt="Football for 4-6" class="image" onclick="location.href='category-4-6.html'">
+            </div>
+
+            <div class="tutorial">
+                <label>Age 7 to 10</label>
+                <img src="./images/7to10a.jpg" alt="Football for 7-10" class="image" onclick="location.href='category-7-10.html'">
+            </div>
+
+            <div class="tutorial">
+                <label>Age 11 to 15</label>
+                <img src="./images/11to15.jpg" alt="Football for 11-15" class="image" onclick="location.href='category-11-15.html'">
+            </div>
+        </div>
     </div>
-    
-    <!-- Football Images -->
-    <div class="image-container">
-        <div class="tutorial">
-            <label>Age 4 to 6</label>
-            <img src="./images/football1.jpg.jpg" alt="Football for 4-6" class="image age-4-6" onclick="location.href='category-4-6.html'">
-        </div>
 
-        <div class="tutorial">
-            <label>Age 7 to 10</label>
-            <img src="./images/Football1.jpg" alt="Football for 7-10" class="image age-7-10" onclick="location.href='category-7-10.html'">
-        </div>
+    <!-- Heading Container -->
+    <div class="heading-container">
+        <h2>Explore Football Gear: Boots, Balls, Jerseys & ShinPad</h2>
+        <div class="image-container">
+            <div class="tutorial">
+                
+                <img src="./images/boot8.jpg" alt="Football Boots" class="image" onclick="location.href='boots.html'">
+            </div>
 
-        <div class="tutorial">
-            <label>Age 11 to 15</label>
-            <img src="./images/Football4.jpg" alt="Football for 11-15" class="image age-11-15" onclick="location.href='category-11-15.html'">
+            <div class="tutorial">
+                
+                <img src="./images/Jersey.jpg" alt="Football Shorts" class="image" onclick="location.href='Jersey.html'">
+            </div>
+
+            <div class="tutorial">
+                
+                <img src="./images/ball.jpg" alt="Football Ball" class="image" onclick="location.href='ball.html'">
+            </div>
+	    <div class="tutorial">
+                
+                <img src="./images/Shinpad1.jpg" alt="Football Shinpad" class="image" onclick="location.href='Shinpad.html'">
+            </div>
         </div>
     </div>
 </div>
-
-<script>
-    function filterImages() {
-        const selectedCategory = document.getElementById('age-category')?.value;
-        const tutorials = document.querySelectorAll('.tutorial');
-
-        tutorials.forEach(tutorial => {
-            if (selectedCategory === 'all' || tutorial.classList.contains(`age-${selectedCategory.replace('-', '_')}`)) {
-                tutorial.style.display = 'block';
-            } else {
-                tutorial.style.display = 'none';
-            }
-        });
-    }
-
-    // Display all categories on load
-    window.onload = () => filterImages();
-</script>
 
 </body>
 </html>
